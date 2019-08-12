@@ -9,10 +9,11 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost:3306/rest_apiiii'
 
 db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
-# manager = Manager(app)
-# manager.add_command('db', MigrateCommand)
+migrate = Migrate(app, db)
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 ma = Marshmallow(app)
 
-from RESTAPI import fetch
-from RESTAPI import route
+
+# from myapp import view
+from myapp import route

@@ -1,5 +1,6 @@
-from RESTAPI import manager
-from RESTAPI import fetch
+from myapp import app,manager
 
 if __name__ == '__main__':
-    manager.run()
+  app.run(debug=True)
+  manager.run()
+  
